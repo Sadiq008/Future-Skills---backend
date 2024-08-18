@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="m-2 p-2">
+      <div class="mb-8">
+        <h1 class="text-center text-4xl">Help Center</h1>
+      </div>
+      <h1 class="text-3xl font-semibold">Manage Your Account</h1>
+      <form action="/cards" method="post">
+        <div class="mt-8">
+          <label for="input_id" class="text-2xl">Id Number</label><br />
+          <input
+            type="text"
+            id="input_id"
+            name="id"
+            class="mt-2 border rounded border-black outline-0 p-2"
+            placeholder="ID Number"
+            value="<%= newCard ? newCard.id : '' %>" 
+          />
+        </div>
+        <div class="mt-8">
+          <label for="input_title" class="text-2xl">Title</label><br />
+          <input
+            type="text"
+            id="input_title"
+            name="title"
+            class="mt-2 border rounded border-black outline-0 p-2"
+            placeholder="Title"
+            value="<%= newCard ? newCard.title : '' %>" 
+          />
+        </div>
+        <div class="mt-8">
+          <label for="input_description" class="text-2xl">Description<label><br />
+          <textarea
+            name="description" 
+            id="input_description"
+            class="mt-2 border rounded border-black outline-0 h-28 w-96 text-base p-2"
+            placeholder="Description"
+          ><%= newCard ? newCard.description : '' %></textarea>
+        </div>
+        <div class="mt-8">
+          <input 
+            type="submit" 
+            value="Create Card" 
+            class="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
+          >
+        </div>
+      </form>  
+    </div>
+  </body>
+</html>
